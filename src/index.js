@@ -2,8 +2,10 @@ let addToy = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   getToys()
+
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
+  const form = document.querySelector('form.add-toy-form')
 
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
@@ -15,12 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  form.addEventListener('submit', postToy)
+
 });
 
 const getToys = () => {
   axios.get('http://localhost:3000/toys').then(resp => {
     for (let toy of resp.data) createToy(toy)
   })
+}
+
+const makeToy = toy => {
+  axios.post('http://localhost:3000/toys', toy)
+    .then(resp => createToy(resp.data))
+}
+
+const updateLikes = toy => {
+  toy.likes++
+  axios.patch(`http://localhost:3000/toys/${toy.id}`, toy)
+    .then(resp => {
+      const btn = document.getElementById(toy.id)
+      const p = btn.previousElementSibling
+      p.innerText = `${toy.likes} Likes`
+    })
 }
 
 const createToy = toy => {
@@ -37,7 +56,23 @@ const createToy = toy => {
   img.src = toy.image
   p.innerText = `${toy.likes} Likes`
   btn.classList.add('like-btn')
+  btn.innerText = "Like <3"
+  btn.id = toy.id
+
+  btn.addEventListener('click', () => updateLikes(toy))
 
   div.append(h2, img, p, btn)
   collection.appendChild(div)
+}
+
+const postToy = e => {
+  e.preventDefault()
+  const toy = {
+    name: e.target.name.value,
+    image: e.target.image.value,
+    likes: 0
+  }
+  makeToy(toy)
+  e.target.name.value = ""
+  e.target.image.value = ""
 }

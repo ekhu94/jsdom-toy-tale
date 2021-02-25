@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 12
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 10
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "id": 5,
       "name": "Rex",
       "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": 1
+      "likes": 2
     },
     {
       "id": 6,
@@ -40,13 +40,25 @@
       "id": 7,
       "name": "Hamm",
       "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": 0
+      "likes": 1
     },
     {
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": -2
+      "likes": 2
+    },
+    {
+      "name": "Baby Yoda",
+      "image": "https://cdn.shopify.com/s/files/1/2637/6278/products/887961938814a_ad6ef9b7-701c-4cae-8be0-21a912bcc5e0_1024x1024.jpg?v=1589329554",
+      "likes": 3,
+      "id": 9
+    },
+    {
+      "name": "Geno Saurer",
+      "image": "https://cdn.shopify.com/s/files/1/2637/6278/products/1571368014_45586_Geno1_ba377869-1af4-4520-9d87-3d0e523cce6a_1024x1024.jpg?v=1587419663",
+      "likes": 0,
+      "id": 10
     }
   ]
 }
