@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toyFormContainer = document.querySelector(".container");
   const form = document.querySelector('form.add-toy-form')
 
-
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
     addToy = !addToy;
